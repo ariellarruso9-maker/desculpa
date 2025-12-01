@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Desculpa, meu amor ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #0f172a; /* deep night */
+      --bg2: #3b0a3b; /* plum */
+      --accent: #ffb4c4; /* soft pink */
+      --card: rgba(255,255,255,0.06);
+      --glass: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: radial-gradient(circle at 10% 20%, rgba(255,180,180,0.06), transparent 10%), linear-gradient(120deg,var(--bg1), var(--bg2));
+      color:#fff;
+      padding:32px;
+    }
+    .container{
+      width:100%;
+      max-width:920px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius:18px;
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      position:relative;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .hearts{
+      position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:0.65;
+    }
+    .hero{
+      display:flex;gap:24px;align-items:center;
+      flex-wrap:wrap;
+    }
+    .photo{
+      flex:0 0 160px;height:160px;border-radius:14px;overflow:hidden;
+      background:linear-gradient(135deg,#ff9fb8,#7b2cbf);
+      display:flex;align-items:center;justify-content:center;font-size:48px;color:rgba(255,255,255,0.95);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+    h1{margin:0;font-size:28px;letter-spacing:-0.4px}
+    p.lead{margin:8px 0 0;color:rgba(255,255,255,0.88)}
+    .card{
+      margin-top:18px;background:var(--card);padding:18px;border-radius:12px;backdrop-filter: blur(6px);
+    }
+    .message{
+      font-size:18px;line-height:1.5;color:#fff;margin:0 0 12px;
+    }
+    .small{font-size:14px;color:rgba(255,255,255,0.8)}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{background:linear-gradient(90deg,var(--accent),#ff7aa2);border:none;padding:10px 14px;border-radius:10px;color:#3b0920;font-weight:600;cursor:pointer;box-shadow: 0 6px 14px rgba(123,28,88,0.25)}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(255,255,255,0.06);box-shadow:none}
+    footer{margin-top:18px;text-align:right;color:rgba(255,255,255,0.7);font-size:13px}
+
+    /* hearts animation */
+    @keyframes floaty{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.02)}100%{transform:translateY(0) scale(1)}}
+    .heart{position:absolute;width:28px;height:28px;background:var(--accent);clip-path:polygon(50% 0%, 64% 14%, 80% 14%, 100% 30%, 100% 58%, 84% 78%, 50% 100%, 16% 78%, 0% 58%, 0% 30%, 20% 14%, 36% 14%);opacity:0.9;filter:blur(0.2px)}
+    .heart.s1{left:10%;top:10%;animation:floaty 5s ease-in-out infinite}
+    .heart.s2{left:78%;top:24%;width:14px;height:14px;opacity:0.6;animation:floaty 6s ease-in-out 1s infinite}
+    .heart.s3{left:40%;top:2%;width:20px;height:20px;animation:floaty 4.8s ease-in-out 0.6s infinite}
+    .heart.s4{right:6%;bottom:12%;width:34px;height:34px;animation:floaty 7s ease-in-out 0.2s infinite}
+
+    /* responsive */
+    @media (max-width:640px){.hero{flex-direction:column;align-items:flex-start}.photo{width:120px;height:120px}}
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <div class="hearts" aria-hidden="true">
+      <div class="heart s1"></div>
+      <div class="heart s2"></div>
+      <div class="heart s3"></div>
+      <div class="heart s4"></div>
+    </div>
+
+    <div class="hero">
+      <div class="photo" aria-hidden="true">💖</div>
+      <div style="flex:1;min-width:200px;">
+        <h1>Amor, me desculpa por domingo...</h1>
+        <p class="lead">Eu sinto muito por não ter sentado ao seu lado no culto. Isso ficou prendido em mim e eu preciso dizer o quanto lamento.</p>
+
+        <div class="card">
+          <p class="message" id="messageText">Minha querida [nome dela],
+            <br><br>
+            Hoje eu errei. Eu deveria ter caminhado até você e sentado ao seu lado no culto — não por obrigação, mas porque estar com você é onde eu mais quero estar. Eu sei que esse gesto foi importante para você e eu falhei em fazer o que era certo no momento.
+            <br><br>
+            Não quero que meu descuido seja motivo de mágoa entre nós. Por favor, me perdoe. Prometo estar presente, olhar por você e fazer questão de mostrar, com ações, o quanto você é importante para mim. 
+            <br><br>
+            Com todo meu amor e arrependimento,<br>
+            <strong>[De Ariel para vitória o amor da minha vida]</strong>
+          </p>
+
+      
+
+          <div class="actions">
+            <button class="btn" onclick="copiar()">Copiar mensagem</button>
+            <button class="btn ghost" onclick="baixar()">Baixar página</button>
+            <button class="btn ghost" onclick="abrirWhats()">Enviar pelo WhatsApp</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function copiar(){
+
+      navigator.clipboard.writeText(text).then(()=>{
+        alert('Mensagem copiada! Agora você pode colar e enviar.');
+      }).catch(()=>alert('Não foi possível copiar automaticamente. Selecione o texto e copie manualmente.'));
+    }
+
+    function baixar(){
+      const html = '<!doctype html>' + document.documentElement.outerHTML;
+      const blob = new Blob([html], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'pedido-de-desculpas.html'; document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function abrirWhats(){
+      const mensagem = encodeURIComponent(document.getElementById('messageText').innerText);
+      const link = 'https://wa.me/?text=' + mensagem;
+      window.open(link, '_blank');
+    }
+  </script>
+</body>
+</html>
+
